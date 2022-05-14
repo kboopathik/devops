@@ -1,0 +1,9 @@
+---
+- name: Transfer and execute a script.
+  hosts: all
+  tasks:
+     - name: Transfer the script
+       copy: src=/home/ec2-user/db/script.sh dest=/home/ec2-user mode=0777
+
+     - name: Execute the script
+       command: sh /home/ec2-user/script.sh
